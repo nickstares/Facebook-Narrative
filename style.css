@@ -1,0 +1,52 @@
+*{
+	padding:0;
+	margin: 0;
+}
+
+#heading {
+	position: fixed;
+	top:0;
+	
+	display: block;
+	width: 100%;
+	
+	background-color:#3A5795 ;
+
+height: 82px;
+min-width: 980px;
+margin: 0 auto;
+/*padding-top: 13px;*/
+clear: both;
+
+
+}
+
+
+
+#heading div {
+	margin-top: 5px;
+	display: block;
+	float:right;
+	padding: 20px;
+
+}
+
+#heading p {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+font-size: 11px;
+display: block;
+/*-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;*/
+color: white;
+text-align: left;
+}
+
+#email-div {
+	margin-right: -30px;
+}
+
+body {
+	background-color: #EDEFF5;
+}
