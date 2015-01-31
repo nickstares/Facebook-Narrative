@@ -1,0 +1,11 @@
+.custom-heading {
+	background-color:#3A5795;
+	height: 43px;
+	
+}
+
+.form-control {
+	position: relative;
+top: -4px;
+left: 25%;
+}

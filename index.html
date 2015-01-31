@@ -3,11 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		
 	<link rel="stylesheet" href="./style.css">
+
 </head>
-<div id="heading">
+<!-- <div id="heading" class="navbar"> -->
 		<!-- <img src="./bookface.png" alt="bookface logo"> -->
-			<form action="javascript:void(0)">
+		<!-- 	<form action="javascript:void(0)">
 				<div>
 					<p>Password:</p> 
 					<input type="text">
@@ -19,9 +26,92 @@
 				</div>
 			</form>
 		</div>
-</body>
+</body> -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid custom-heading">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">BookFace</a> -->
+      <a class="logo1" href="#">bookface</a>
+    </div>
 
-<body>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Email">
+          <input type="text" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Log in</button>
+
+      </form>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br>
+<br>
+<br>
+
+
+
+<div class="container-fluid">
+	<div class="row">
+	<div class="col-sm-1"></div>
+		<div class="col-sm-4">
+			<div class="jumbotron">
+				<h2>What is this?</h1>
+				<p>Try logging in as one of the accounts on the right.</p>
+			</div>
+		</div>
+
+		<div class="col-sm-1"></div>
+
+		<div class="col-sm-5 right-text">
+			<div class="jumbotron">
+				
+					<table class="table">
+						
+ 						<tr class="table-heading"> 
+ 							<td>Email</td>
+ 							<td>Password</td>
+ 							
+ 						</tr>
+ 						
+ 						<tr>
+ 							<td>example@gmail.com</td>
+ 							<td>example1</td>
+ 						</tr>
+ 						<tr>
+ 							<td>example2@gmail.com</td>
+ 							<td>example2</td>
+ 						</tr>
+ 						<tr>
+ 							<td>example3@gmail.com</td>
+ 							<td>example3</td>
+ 						</tr>
+					</table>			
+				
+				
+
+			</div>
+			
+		</div>
+	</div>
+	
+</div>
+
+
+
 	
 
 
@@ -29,4 +119,5 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="./app.js"></script>
+
 </html>
