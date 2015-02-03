@@ -4,6 +4,10 @@
 	
 }
 
+body {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+
 .form-control {
 	position: relative;
 top: 5px;
@@ -42,16 +46,25 @@ text-decoration: none;
 
 #button1 {
 	position: relative;
-	right: -100%;
+	right: -75px;
 	top: 8px;
 }
 
-.jumbotron {
+.status-box {
 	background-color: white;
+	margin-top: 20px;
+	margin-bottom:20px;
+	
+	
+}
+
+.trending {
+	background-color: white;
+	height: 225px;
 }
 
 body {
-  background-color: #E0E3EF;
+  	background-color: #E9EAED;
 
 }
 
@@ -63,6 +76,10 @@ body {
 .left-sidebar ul li {
 list-style-type: none;
 }
+.left-sidebar ul li a {
+list-style-type: none;
+color: black;
+}
 
 .left-sidebar ul li a:link {
 	text-decoration: none;
@@ -73,7 +90,7 @@ list-style-type: none;
 }
 
 
-.left-sidebar ul li a:visisted {
+.left-sidebar ul li a:visited {
 	text-decoration: none;
 }
 
@@ -96,3 +113,118 @@ list-style-type: none;
 		position: relative;
 		left: -10%;
 	}
+
+.make-status {
+height:33px;
+border-bottom: 1px solid #F6F7F8;
+background-color: white;
+}	
+.make-status ul li {
+display: inline-block;
+padding: 0px 3px 0px 3px;
+margin: 0px 10px 0px 10px;
+	}
+	.make-status ul {
+		text-align: center;
+		position: relative;
+		right:20px;
+		top: 4px
+	}
+
+.inputarea {
+	height: 73px;
+	border-bottom: 1px solid #F6F7F8;
+	background-color: white;
+}
+
+.inputarea textarea {
+position: relative;
+left:0px;
+
+}
+
+.submit-button {
+	margin-bottom: 20px;
+	height:40px;
+	background-color:#F6F7F8;
+	text-align: right;
+}
+#button12 {
+	position: relative;
+	right:10px;
+	top:5px;
+	background-color:#3A5795 ;
+	color: white;
+}
+
+.face-name {
+	padding: 10px;
+
+}
+
+.face-name a {
+position: relative;
+top: -10px;
+font-weight: bold;
+margin-left: 10px;
+}
+
+.face-name small {
+	position: relative;
+	top: 10px;
+	right:85px;
+	font-weight: bold;
+}
+
+.status-content {
+	position: relative;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+
+.like-comment-share {
+	padding:0px 10px 10px 10px ;
+}
+
+small {
+	color:#9197a3;
+}
+
+
+.likes small {
+	color: black;
+}
+
+.likes {
+	background-color: #F6F7F8;
+	padding: 5px;
+}
+
+.write-a-comment {
+	background-color: #F6F7F8;
+}
+
+.write-a-comment form input {
+	position: relative;
+	width: 70%; 
+	left: 60px;
+	bottom: 20px;
+	height: 40px;
+}
+
+.write-a-comment img {
+	position: relative;
+	top: 20px;
+	left:10px;
+}
+
+
+
+
+
+
+
+
+
+

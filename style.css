@@ -54,6 +54,10 @@ body {
 
 
 /**/
+
+body {
+	background-color: #EDEFF5;
+}
 .custom-heading {
 	background-color:#3A5795;
 	height: 82px;
@@ -81,4 +85,6 @@ color: white;
 		font-size: 20px;
 		font-weight:bold;
 	}
-
+.jumbotron {
+	background-color: white;
+}
