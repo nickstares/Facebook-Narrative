@@ -129,6 +129,7 @@
 					</div>
 				</div>
 			</div> -->
+
 		</div>	
 
 		<div class="col-sm-2">
@@ -148,7 +149,7 @@
 			<div class="status-box">
 				<div class = "face-name">
 					<img src="http://lorempixel.com/40/40/" alt="">
-					<a href="#">{{username}}</a>
+					<a  class="name-link" href="#">{{username}}</a>
 					<small>3 hrs</small>
 				</div>
 				<div class="status-content">
@@ -171,13 +172,16 @@
 					<div class="likes">
 					{{#checkLikes likes}}
 						<span class="glyphicon glyphicon-thumbs-up"></span>
-							<small><a href="#">{{likes}}</a> likes this.<small>
+							<small><a class="name-link" href="#">{{likes}}</a> likes this.<small>
 						</div>
 					{{else}}
+
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 							<small><a href="#">{{likes.length}}</a> people like this.<small>
 						</div>
-					{{/checkLikes}}
+					{{/checkLikes}}	
+					
+
 					<div class="write-a-comment">
 						<img src="http://lorempixel.com/40/40/" alt="">
 						<form action="">
@@ -187,6 +191,25 @@
 				</div>
 			</div>
 
+</script>
+
+<script id="comment-template" type="text/x-handlebars-template">
+	
+		<div class="comment-section">
+			<div class = "face-name-comments">
+					<img src="http://lorempixel.com/40/40/" alt="">
+					<span class = "name1"><a class="name-link" href="#">{{username}}</a>
+					{{text}}
+					</span>
+					<div class ="comment-date-like-div">	
+						<p class="comment-date-like">	
+						{{date}} <a href="javascript:void(0)">Like</a>
+						</p>
+					</div>
+
+			</div>
+		</div>
+		
 </script>
 <script src="newsfeed.js"></script>
 </body>

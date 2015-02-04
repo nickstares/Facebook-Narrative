@@ -203,14 +203,16 @@ small {
 
 .write-a-comment {
 	background-color: #F6F7F8;
+	margin-top: -15px;
 }
 
 .write-a-comment form input {
 	position: relative;
-	width: 70%; 
+	width: 85%; 
 	left: 60px;
 	bottom: 20px;
 	height: 40px;
+
 }
 
 .write-a-comment img {
@@ -220,11 +222,34 @@ small {
 }
 
 
+.face-name-comments {
+position: relative;
+left:5px;
+padding-bottom:-15px;
+margin-bottom: -20px;
+padding-top: 5px;
+
+}
+.name1{
+position: relative;
+top: -10px;
+
+font-size: 12px
+
+}
+
+.name1 a {
+	font-weight: bold;
+}
 
 
 
-
-
-
+.comment-date-like-div {
+	position: relative;
+	left:44px;
+	top:-20px;
+	font-size: 12px;
+	color:gray;
+}
 
 
