@@ -1,5 +1,3 @@
-// var bananas,x;
-
 $(document).ready(function() {
 	
 	var checkLogin = function () {
@@ -82,34 +80,34 @@ $(document).ready(function() {
 
    {username: "Fred Johnson", 
    comments: [], 
-   text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+   text:"Wow, this project is so good looking!",
    likes:["John Smith", "Sally Jefferson"], 
   date:"Aug 9, 2000"},
 
 
    {username: "Sally Jefferson", 
-   comments: [], 
+   comments: [{username:"John Smith", text:"SOLD OUT SEATS"},{username:"Fred Johnson", text:"TO HEAR BIGGIE SMALLS SPEAK"}], 
    text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
    likes:["John Smith", "Sally Jefferson"], 
-  date:"Aug 9, 1994"},
+  date:"Jan 31, 1994"},
 
   {username: "John Smith", 
-   comments: [], 
+   comments: [{username:"Sally Jefferson", text:"IT GOES IT GOES IT GOES IT GOES IT GUILLOTINE"}], 
    text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-   likes:["John Smith", "Sally Jefferson"], 
+   likes:[ "Sally Jefferson"], 
   date:"Aug 9, 1996"}
 ];
 
 		var userList = {
 		"Fred Johnson": {email:"example@gmail.com", pfLink: "./fred.html",
 		 friends:["Sally Jefferson"], 
-		 pfp: "./fred-johnson.jpg"},
+		 pfp: "./fred.jpg"},
 		"Sally Jefferson": { email:"example1@gmail.com" ,pfLink: "./sally.html", 
-		friends:[ "John Smith"],
+		friends:[ "John Smith", "Fred Johnson", "Sally Jefferson"],
 		pfp: "./fred-johnson.jpg"},
 		"John Smith": { email:"example2@gmail.com", pfLink: "./john.html", 
-		friends:["Sally Jefferson"], 
-		pfp: "./fred-johnson.jpg"}
+		friends:["Sally Jefferson", "John Smith"], 
+		pfp: "./stefan.png"}
 	};
 
 
@@ -117,7 +115,7 @@ $(document).ready(function() {
 			return userList[name];
 
 		}
-
+// ADDS NAMES AND IMAGES
 		function linkifyNames () {
 			var nameLinks = document.getElementsByClassName("name-link");
 			for (var i = 0; i < nameLinks.length; i++) {
@@ -126,7 +124,15 @@ $(document).ready(function() {
 			  	var profileLink = getLinkForUser(username);
 			  	
 			  	link.setAttribute("href", profileLink.pfLink);
+			  	// closest is not working but should? siblings works
+			  	// for status but not for comment.
+			  	if ($(link).siblings("img").length === 1 ) {
 			  	$(link).siblings("img").attr("src", profileLink.pfp);
+			  	
+			  }
+			  if ($(link).siblings("img").length === 0) {
+			  	$(link).parent().siblings("img").attr("src", profileLink.pfp);
+			  }
 			}
 			
 		}
@@ -143,51 +149,6 @@ $(document).ready(function() {
 		var template = Handlebars.compile(source);
 		var source1 = $("#comment-template").html();
 	 	var template1 = Handlebars.compile(source1);
-
-	// loop that appends statuses and comments to the main column
-		
-	// COMPLICATED LOOP THAT ADDS LINKS TO PROFILE PAGES FROM STATUSES
-		// for (var c = 0; c < context.length; c++) {
-		// 	var currentStatus = context[c];
-		// 	for (var e = 0; e < currentStatus.comments.length; e++) {
-		// 		var currentComment = currentStatus.comments[e];
-				
-		// 		for (var f = 0; f < userList.length; f++) {
-		// 			if (currentComment.username === userList[f].name ) {
-		// 				var one1 = userList[f].pfLink;
-		// 				var check1 = document.getElementsByClassName("name-link");
-						
-		// 				for (var h = 0; h < check1.length; h++) {
-		// 					var pleaseWork1 = check1[h].firstChild.data;
-		// 						if (pleaseWork1===currentComment.username) {
-		// 							check[h].href = one1;
-		// 						}
-		// 				}
-						
-
-		// 			}
-		// 		}
-		// 	}
-
-
-		// // SAME THING FOR COMMENTS
-		// 	for (var d = 0; d < userList.length; d++) {
-		// 		if (currentStatus.username === userList[d].name) {
-		// 			var one = userList[d].pfLink;
-		// 			var check = document.getElementsByClassName("name-link");
-					
-		// 			for (var z = 0; z < check.length; z++) {
-		// 				var pleaseWork = check[z].firstChild.data;
-		// 					if (pleaseWork===context[c].username) {
-		// 						check[z].href = one;
-		// 					}
-		// 			}
-					
-		// 		}
-
-		// 	}
-
-		// }
 
 
 
@@ -222,9 +183,4 @@ $(document).ready(function() {
 	  }
 
 });
-
-
-
-
-
 
