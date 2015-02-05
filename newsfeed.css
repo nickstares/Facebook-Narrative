@@ -159,6 +159,7 @@ left:0px;
 
 .face-name {
 	padding: 10px;
+	height:60px;
 
 }
 
@@ -250,6 +251,16 @@ font-size: 12px
 	top:-20px;
 	font-size: 12px;
 	color:gray;
+}
+
+.status-date {
+	color: gray;
+	position: relative;
+	left: 55px;
+	top: -20px;
+	margin:0px;
+	font-size: 12px
+
 }
 
 
