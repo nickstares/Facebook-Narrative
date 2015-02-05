@@ -101,19 +101,20 @@ $(document).ready(function() {
 ];
 
 		var userList = {
-		"Fred Johnson": {name: "Fred Johnson", email:"example@gmail.com", pfLink: "./fred.html",
+		"Fred Johnson": {email:"example@gmail.com", pfLink: "./fred.html",
 		 friends:["Sally Jefferson"], 
 		 pfp: "./fred-johnson.jpg"},
-		"Sally Jefferson": {name: "Sally Jefferson", email:"example1@gmail.com" ,pfLink: "./sally.html", 
-		friends:["Fred Johnson", "John Smith"]},
-		"John Smith": {name: "John Smith", email:"example2@gmail.com", pfLink: "./john.html", 
-		friends:["Sally Jefferson"] }
+		"Sally Jefferson": { email:"example1@gmail.com" ,pfLink: "./sally.html", 
+		friends:[ "John Smith"],
+		pfp: "./fred-johnson.jpg"},
+		"John Smith": { email:"example2@gmail.com", pfLink: "./john.html", 
+		friends:["Sally Jefferson"], 
+		pfp: "./fred-johnson.jpg"}
 	};
 
 
-		function getLinkForUser (name) {
-			// console.log(userList[name]);
-			return userList[name].pfLink;
+		function getLinkForUser (name) {			
+			return userList[name];
 
 		}
 
@@ -122,12 +123,21 @@ $(document).ready(function() {
 			for (var i = 0; i < nameLinks.length; i++) {
 				var link = nameLinks[i];
 			  	var username = link.innerHTML;
-			  	console.log(username);
 			  	var profileLink = getLinkForUser(username);
-			  	link.setAttribute("href", profileLink);
+			  	
+			  	link.setAttribute("href", profileLink.pfLink);
+			  	$(link).siblings("img").attr("src", profileLink.pfp);
 			}
-			// console.log("linkify is being called");
+			
 		}
+
+		var addProfilePicture = function(a) {
+			var pfpImages = document.getElementsByClassName("pfp-img");
+			for (var i = 0; i < pfpImages.length; i++) {
+				
+			}
+
+		};
 
 		var source = $("#status-template").html();
 		var template = Handlebars.compile(source);
