@@ -38,7 +38,7 @@
         <span class="icon-bar"></span>
       </button>
       <!-- <a class="navbar-brand" href="#">BookFace</a> -->
-      <a class="logo1" href="#">bookface</a>
+      <span class="logo1">bookface</span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,12 +46,12 @@
       <ul class="nav navbar-nav">
         
       </ul>
-      <form action="./newsfeed.html" class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email" name="email">
-          <input type="password" class="form-control" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-default">Log in</button>
+      <form action="./newsfeed.html" class="navbar-form navbar-left" id="form1" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" id="email1" placeholder="Email" name="email">
+	          <input type="password" class="form-control" id="password1" placeholder="Password">
+	        </div>
+	        <button type="submit" id="button1" class="btn btn-default">Log in</button>
 
       </form>
       
@@ -89,15 +89,15 @@
  						</th>
  						<tr>
  							<td>example@gmail.com</td>
- 							<td>example1</td>
+ 							<td>example</td>
  						</tr>
  						<tr>
  							<td>example1@gmail.com</td>
- 							<td>example2</td>
+ 							<td>example1</td>
  						</tr>
  						<tr>
  							<td>example2@gmail.com</td>
- 							<td>example3</td>
+ 							<td>example2</td>
  						</tr>
 					</table>			
 				
@@ -117,6 +117,7 @@
 
 
 
+<script src="./userList.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="./app.js"></script>
 

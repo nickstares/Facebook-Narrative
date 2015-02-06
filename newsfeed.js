@@ -13,6 +13,8 @@ $(document).ready(function() {
 			}
 	};
 
+
+
 	var checkEmailAgainstQuery = function(email) {
 		if (window.location.search === "?email=" + email) {
 		return true;
@@ -34,10 +36,23 @@ $(document).ready(function() {
 		  	}
 	  
 		});
-		// console.log(user);
 		sortByDate(context);
 		sortCommentsByDate();
 		appending(relevantStati);
+		changeUserImages(checkLogin());
+		changeUserText(checkLogin());
+
+	};
+
+	var changeUserImages = function (user) {
+		var loggedInUser= userList[user];
+		$(".user-img").attr("src", loggedInUser.pfp);
+
+	};
+
+	var changeUserText = function (user) {
+		var firstName = user.split(" ")[0];
+		$("#user-nav a").text(firstName);
 	};
 
 	var sortCommentsByDate = function() {
@@ -47,23 +62,6 @@ $(document).ready(function() {
 		}
 	};
 
-// HANDLEBARS ===================================================
-	var appending = function (array) {
-	for (var i = 0; i < array.length; i++) {
-			var html = $(template(array[i]));
-			// f(context[i].likes);
-			$(".newsfeed").append(html);
-			
-			
-
-				for (var a = 0; a < array[i].comments.length; a++) {
-					var html1 = template1(array[i].comments[a]);
-
-					html.find(".likes").append(html1);
-				}
-		}
-	};
-// ================================================================
 	var sortByDate = function(array) {array.sort(function (a, b) {
 		  if (Date.parse(a.date) > Date.parse(b.date)) {
 		    return 1;
@@ -76,12 +74,29 @@ $(document).ready(function() {
 		});
 	};
 
+// HANDLEBARS ===================================================
+	var appending = function (array) {
+	for (var i = 0; i < array.length; i++) {
+			var html = $(template(array[i]));
+			// f(context[i].likes);
+			$(".newsfeed").append(html);
+
+				for (var a = 0; a < array[i].comments.length; a++) {
+					var html1 = template1(array[i].comments[a]);
+
+					html.find(".likes").append(html1);
+				}
+		}
+	};
+// ================================================================
+	
+
 		 var context = [
 
    {username: "Fred Johnson", 
    comments: [], 
-   text:"Wow, this project is so good looking!",
-   likes:["John Smith", "Sally Jefferson"], 
+   text:"!_________________________!_!!!________!_!_______!",
+   likes:["John Smith", "Sally Jefferson, John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson, John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,John Smith", "Sally Jefferson,"], 
   date:"Aug 9, 2000"},
 
 
@@ -92,23 +107,18 @@ $(document).ready(function() {
   date:"Jan 31, 1994"},
 
   {username: "John Smith", 
-   comments: [{username:"Sally Jefferson", text:"IT GOES IT GOES IT GOES IT GOES IT GUILLOTINE"}], 
-   text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+   comments: [{username:"Sally Jefferson", text:"ah, ah, ooh, ah"}, {username:"Sally Jefferson", text:"billy billy, not really"}], 
+   text:"yo, boy, yo, amnesia",
+   likes:[ "Sally Jefferson"], 
+  date:"Aug 9, 1996"},
+   {username: "John Smith", 
+   comments: [{username:"Sally Jefferson", text:"ah, ah, ooh, ah"}, {username:"Sally Jefferson", text:"billy billy, not really"}], 
+   text:"yo, boy, yo, amnesia",
    likes:[ "Sally Jefferson"], 
   date:"Aug 9, 1996"}
 ];
 
-		var userList = {
-		"Fred Johnson": {email:"example@gmail.com", pfLink: "./fred.html",
-		 friends:["Sally Jefferson"], 
-		 pfp: "./fred.jpg"},
-		"Sally Jefferson": { email:"example1@gmail.com" ,pfLink: "./sally.html", 
-		friends:[ "John Smith", "Fred Johnson", "Sally Jefferson"],
-		pfp: "./fred-johnson.jpg"},
-		"John Smith": { email:"example2@gmail.com", pfLink: "./john.html", 
-		friends:["Sally Jefferson", "John Smith"], 
-		pfp: "./stefan.png"}
-	};
+		
 
 
 		function getLinkForUser (name) {			
@@ -116,7 +126,7 @@ $(document).ready(function() {
 
 		}
 // ADDS NAMES AND IMAGES
-		function linkifyNames () {
+		var linkifyNames = function() {
 			var nameLinks = document.getElementsByClassName("name-link");
 			for (var i = 0; i < nameLinks.length; i++) {
 				var link = nameLinks[i];
@@ -124,8 +134,6 @@ $(document).ready(function() {
 			  	var profileLink = getLinkForUser(username);
 			  	
 			  	link.setAttribute("href", profileLink.pfLink);
-			  	// closest is not working but should? siblings works
-			  	// for status but not for comment.
 			  	if ($(link).siblings("img").length === 1 ) {
 			  	$(link).siblings("img").attr("src", profileLink.pfp);
 			  	
@@ -135,7 +143,7 @@ $(document).ready(function() {
 			  }
 			}
 			
-		}
+		};
 
 		var addProfilePicture = function(a) {
 			var pfpImages = document.getElementsByClassName("pfp-img");
@@ -150,14 +158,10 @@ $(document).ready(function() {
 		var source1 = $("#comment-template").html();
 	 	var template1 = Handlebars.compile(source1);
 
-
-
 	 	// CALLING FUNCTIONS !!!!
 	 	checkLogin();
 		loadPageForUser(checkLogin());
 		linkifyNames();
-			
-
 
 }); //end docready function
 

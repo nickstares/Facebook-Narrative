@@ -29,7 +29,7 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 				<ul  class= "nav navbar-nav"id = "nav-text">
-								<li id="user-nav"><a class="" href="#">User</a></li>
+								<li id="user-nav"><a href="#">User</a></li>
 								<li><a class="" href="#">Home</a></li>
 								<li><a class="" href="#">Find Friends</a></li>
 							</ul>
@@ -59,13 +59,13 @@
 
 <body>
 	<div class="row">
-		<div class="col-sm-1">
+		<div class="col-sm-2">
 			
 		</div>	
 
 		
 			
-		<div class="col-sm-2">
+		<div class="col-sm-1">
 
 				<div class="left-sidebar">
 					<ul>
@@ -94,42 +94,6 @@
 			<div class="submit-button">
 				<button type="button" id="button12" class="btn btn-default btn-sm active">Post</button>
 			</div>
-			<!-- <div class="status-box">
-				<div class = "face-name">
-					<img class="pfp-img" src="http://lorempixel.com/40/40/" alt="">
-					<a href="#">{{status[0].username}}</a>
-					<small>3 hrs</small>
-				</div>
-				<div class="status-content">
-					<p>{{status[0].text}}</p>
-				</div>
-
-				<div class="like-comment-share">
-					<small>
-
-					<a href="#">Like</a>
-					/
-					<a href="#">Comment</a>
-					/
-					<a href="#">Share</a>
-
-					</small>	
-				</div>
-
-				<div class="likes-comments">
-					<div class="likes">
-					<span class="glyphicon glyphicon-thumbs-up"></span>
-						<small><a href="#">Fred Johnson</a> likes this.<small>
-					</div>
-					<div class="write-a-comment">
-						<img class="pfp-img" src="http://lorempixel.com/40/40/" alt="">
-						<form action="">
-							<input type="text">
-						</form>
-					</div>
-				</div>
-			</div> -->
-
 		</div>	
 
 		<div class="col-sm-2">
@@ -137,9 +101,10 @@
 				
 			</div>
 		</div>	
-		<div class="col-sm-2"></div>	
-		<div class="col-sm-1"></div>
+		<div class="col-sm-1"></div>	
+		
 	</div>
+	<script src="./userList.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
@@ -183,7 +148,7 @@
 					
 
 					<div class="write-a-comment">
-						<img class="pfp-img" src="http://lorempixel.com/40/40/" alt="">
+						<img class="user-img pfp-img" src="http://lorempixel.com/40/40/" alt="">
 						<form action="">
 							<input type="text">
 						</form>

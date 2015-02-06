@@ -59,7 +59,7 @@ text-decoration: none;
 }
 
 .trending {
-	background-color: white;
+	background-image: url("./trending.png");
 	height: 225px;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .left-sidebar {
 	position: relative;
-	left: 50%;
+	left: 0%;
 }
 
 .left-sidebar ul li {
